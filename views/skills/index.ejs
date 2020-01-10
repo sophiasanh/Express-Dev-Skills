@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+    <title>Express Dev Skills</title>
+  </head>
+  <body>
+    <h1>Express Dev Skills</h1>
+    <a href="/skills/new">Add Skill</a>
+    <ul>
+      <% skills.forEach(function(t, idx){ %>
+          <li>
+              <form 
+              action="/skills/<%= idx %>?_method=DELETE"
+              class="delete-form" 
+              method="POST"
+            >
+             <button type="submit">X</button>
+             </form>            
+              <a href='/skills/<%= idx %>'>
+                  <%= t.skill %>
+              </a>
+          </li>
+      <% }); %>
+  </ul>
+  </body>
+</html>
+
+
